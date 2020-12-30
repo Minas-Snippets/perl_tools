@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#subspeed">subspeed</a>
+    <ul>
+      <li><a href="#Abstract">Abstract</a></li>
+      <li><a href="#Usage">Usage</a></li>
+      <li><a href="#example">example</a></li>
+      <li><a href="#note">note</a></li>
+      <li><a href="#installation">installation</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="subspeed">subspeed</h1>
+
+<p>version 0.1</p>
+
+<p>(c) by Mina, 2020</p>
+
+<p>Free software under the GNU public licence 3.0</p>
+
+<p>https://www.gnu.org/licenses/gpl-3.0.en.html</p>
+
+<h2 id="Abstract">Abstract</h2>
+
+<p>Program to linearly change timestamps in a subtitle (*.srt) file. It is meant to offset the &quot;PAL acceleration&quot; of videos.</p>
+
+<h2 id="Usage">Usage</h2>
+
+<p><code>subspeed.pl <i>infile</i> [+|-]</code></p>
+
+<p>The program doesn&#39;t change the actual file: It reads the input file and writes the output to <code>&lt;STDOUT</code>&gt;.</p>
+
+<h2 id="example">example</h2>
+
+<p>If you have a video file coming from a PAL source and a subtitle file indexed for a NTSC or a digital source, the subtitles will lag about half a second per minute. In this case, you should use the &quot;-&quot; parameter:</p>
+
+<p><code>subspeed.pl film.srt - &gt; film.new.srt</code></p>
+
+<h2 id="note">note</h2>
+
+<p>This program will not correct fixed offsets, like for longer and shorter title sequences. Most media players already offer the possibility to set such a fixed subtitle offset.</p>
+
+<h2 id="installation">installation</h2>
+
+<p>On *nix style operation systems, install the program with</p>
+
+<p><code>sudo cp subspeed.pl /usr/local/bin; sudo chmod a+x /usr/local/bin/subspeed.pl</code></p>
+
+
+</body>
+
+</html>
+
+
