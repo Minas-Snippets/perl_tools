@@ -1,0 +1,171 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#countdown.pl">countdown.pl</a></li>
+  <li><a href="#Requisites">Requisites</a>
+    <ul>
+      <li><a href="#Perl">Perl</a></li>
+      <li><a href="#notify-send">notify-send</a></li>
+    </ul>
+  </li>
+  <li><a href="#Synopsis">Synopsis</a>
+    <ul>
+      <li><a href="#Options">Options</a>
+        <ul>
+          <li><a href="#Alarm-Time">Alarm Time</a></li>
+          <li><a href="#Reminder-Interval">Reminder Interval</a></li>
+          <li><a href="#Countdown-Name">Countdown Name</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#Installation">Installation</a></li>
+  <li><a href="#Tips">Tips</a></li>
+</ul>
+
+<h1 id="countdown.pl">countdown.pl</h1>
+
+<p>A command line utility which makes use of Ubuntu&#39;s <code>notify-send</code> utility to display a countdown on the user screen.</p>
+
+<p><b>Written by Mina, free to use.</b></p>
+
+<h1 id="Requisites">Requisites</h1>
+
+<h2 id="Perl">Perl</h2>
+
+<p>Perl should be present by default on practically all Linux system. If not, it can be installed with e.g.</p>
+
+<ul>
+
+<p><code>sudo apt install perl</code></p>
+
+</ul>
+
+<h2 id="notify-send"><code>notify-send</code></h2>
+
+<p>The <code>notify-send</code> utility is not installed by default on all systems. If not present, it can be installed with e.g.</p>
+
+<ul>
+
+<p><code>sudo apt install notify-send</code></p>
+
+</ul>
+
+<h1 id="Synopsis">Synopsis</h1>
+
+<ul>
+
+<p><code>countdown.pl [ALARM TIME] [REMINDER INTERVAL] [COUNTDOWN NAME]</code></p>
+
+</ul>
+
+<h2 id="Options">Options</h2>
+
+<p>All options are optional, do not require flags and don&#39;t need to be given in a particular order. Options are recognized by their format.</p>
+
+<h3 id="Alarm-Time">Alarm Time</h3>
+
+<p>The time when the countdown is supposed to end, given in 24 hours form, separated by colon(s) (&quot;:&quot;):</p>
+
+<ul>
+
+<p><code>H:M[:S]</code></p>
+
+</ul>
+
+<p>Times can be given in double or single digit numbers. Seconds are optional.</p>
+
+<p>If no alarm time is given, it is set by default to 10 minutes in the future</p>
+
+<h3 id="Reminder-Interval">Reminder Interval</h3>
+
+<p>By default, a <code>notify-send</code> message is displayed all the time, containing the countdown&#39;s name and the time until it is finished. This message is refreshed in fixed intervals, the &quot;reminder interval&quot;. It is given as plain number, optionally followed by &quot;h&quot; or &quot;s&quot;.</p>
+
+<ul>
+
+<p><code>N[h|s]</code></p>
+
+</ul>
+
+<p>The number is the reminder interval in minutes, if followed by &quot;h&quot; in hours, if followed by &quot;s&quot; in seconds. The letters can be given in caps or small caps. Following alphanumerical characters are ignored. Other letters than &quot;h&quot; or &quot;s&quot; directly after the number are ignored and the number is interpreted as minutes.</p>
+
+<ul>
+
+<li><p>If no reminder interval is given, the default 1 minute is used.</p>
+
+</li>
+<li><p>If the number 0 is given, there&#39;s only one message at the beginning of the countdown and one at the end.</p>
+
+</li>
+</ul>
+
+<h3 id="Countdown-Name">Countdown Name</h3>
+
+<p>Every word not matching any of the above pattern will be interpreted as being part of the countdown&#39;s name. All words are joined by single spaces and displayed on to top of the reminder message. If no countdown name is given, &quot;Countdown&quot; is the default.</p>
+
+<h1 id="Installation">Installation</h1>
+
+<ul>
+
+<li><p><b>Make sure, you have the <code>notify-send</code> utility installed.</b></p>
+
+</li>
+<li><p>If you want, you can copy <code>countdown.pl</code> e.g. to <code>/usr/local/bin</code> e.g. by <code>sudo cp countdown.pl /usr/local/bin</code>. Of course, you can rename it as you please, getting rid e.g. of the <code>.pl</code> suffix.</p>
+
+</li>
+<li><p>Make sure to make the program executable, e.g. by <code>chmod a+x INSTALLATION PATH/countdown.pl</code></p>
+
+</li>
+</ul>
+
+<h1 id="Tips">Tips</h1>
+
+<ul>
+
+<li><p>Note that the program only supports countdowns up to 24 hours.</p>
+
+</li>
+<li><p>It is advisable, to run the program in the background by adding the ampersand character at the very end of the commang, e.g.</p>
+
+<ul>
+
+<p><code>countdown.pl 23:30 30s Time to sleep my dear &amp;</code></p>
+
+</ul>
+
+</li>
+<li><p>You can create your own manual page by running one of the commands (install if not present):</p>
+
+<ul>
+
+<li><p><code>pod2text countdown.pl &gt; countdown.txt</code></p>
+
+</li>
+<li><p><code>pod2html countdown.pl &gt; countdown.html</code></p>
+
+</li>
+<li><p><code>pod2man countdown.pl &gt; countdown.man</code></p>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</body>
+
+</html>
+
+
